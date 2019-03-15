@@ -32,7 +32,16 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'BPCategoryKit/Classes/**/*'
-  
+
+  s.subspec 'categoryFile' do  |dd|
+    dd.source_files = 'BPCategoryKit/Classes/categoryFile/*'
+  end
+
+  s.subspec 'classes' do  |dd|
+#dd.source_files = 'BPCategoryKit/Classes/classes/*'
+    dd.dependency 'JAnalytics', '~> 1.2.1'
+  end
+
   # s.resource_bundles = {
   #   'BPCategoryKit' => ['BPCategoryKit/Assets/*.png']
   # }
@@ -40,5 +49,5 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
-    s.dependency 'JAnalytics', '~> 1.2.1'
+# s.dependency 'JAnalytics', '~> 1.2.1'
 end
